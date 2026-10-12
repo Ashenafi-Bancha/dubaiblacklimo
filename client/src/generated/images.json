@@ -1,0 +1,194 @@
+{
+  "about/hero": {
+    "width": 2000,
+    "height": 1304,
+    "widths": [
+      480,
+      800,
+      1200,
+      1600,
+      2000
+    ],
+    "color": "#080808"
+  },
+  "fleet/executive-sedan": {
+    "width": 2000,
+    "height": 1331,
+    "widths": [
+      480,
+      800,
+      1200,
+      1600,
+      2000
+    ],
+    "color": "#080808"
+  },
+  "fleet/first-class-sedan": {
+    "width": 2000,
+    "height": 1333,
+    "widths": [
+      480,
+      800,
+      1200,
+      1600,
+      2000
+    ],
+    "color": "#080808"
+  },
+  "fleet/luxury-suv": {
+    "width": 2000,
+    "height": 1600,
+    "widths": [
+      480,
+      800,
+      1200,
+      1600,
+      2000
+    ],
+    "color": "#080808"
+  },
+  "fleet/stretch-limousine": {
+    "width": 2000,
+    "height": 1333,
+    "widths": [
+      480,
+      800,
+      1200,
+      1600,
+      2000
+    ],
+    "color": "#787878"
+  },
+  "fleet/vip-van": {
+    "width": 2000,
+    "height": 1333,
+    "widths": [
+      480,
+      800,
+      1200,
+      1600,
+      2000
+    ],
+    "color": "#080808"
+  },
+  "home/cta": {
+    "width": 2000,
+    "height": 1333,
+    "widths": [
+      480,
+      800,
+      1200,
+      1600,
+      2000
+    ],
+    "color": "#080808"
+  },
+  "home/experience": {
+    "width": 2000,
+    "height": 1334,
+    "widths": [
+      480,
+      800,
+      1200,
+      1600,
+      2000
+    ],
+    "color": "#d8d8d8"
+  },
+  "home/hero": {
+    "width": 2000,
+    "height": 1126,
+    "widths": [
+      480,
+      800,
+      1200,
+      1600,
+      2000
+    ],
+    "color": "#080808"
+  },
+  "services/airport-transfers": {
+    "width": 2000,
+    "height": 1325,
+    "widths": [
+      480,
+      800,
+      1200,
+      1600,
+      2000
+    ],
+    "color": "#282828"
+  },
+  "services/city-tours": {
+    "width": 2000,
+    "height": 1125,
+    "widths": [
+      480,
+      800,
+      1200,
+      1600,
+      2000
+    ],
+    "color": "#585858"
+  },
+  "services/corporate-events": {
+    "width": 2000,
+    "height": 943,
+    "widths": [
+      480,
+      800,
+      1200,
+      1600,
+      2000
+    ],
+    "color": "#b8b8b8"
+  },
+  "services/hotel-partners": {
+    "width": 2000,
+    "height": 1234,
+    "widths": [
+      480,
+      800,
+      1200,
+      1600,
+      2000
+    ],
+    "color": "#080808"
+  },
+  "services/hourly-chauffeur": {
+    "width": 2000,
+    "height": 1500,
+    "widths": [
+      480,
+      800,
+      1200,
+      1600,
+      2000
+    ],
+    "color": "#080818"
+  },
+  "services/intercity": {
+    "width": 2000,
+    "height": 1334,
+    "widths": [
+      480,
+      800,
+      1200,
+      1600,
+      2000
+    ],
+    "color": "#182828"
+  },
+  "services/weddings": {
+    "width": 2000,
+    "height": 1336,
+    "widths": [
+      480,
+      800,
+      1200,
+      1600,
+      2000
+    ],
+    "color": "#282828"
+  }
+}

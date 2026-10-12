@@ -12,7 +12,11 @@
     "dev": "pnpm --filter @app/client dev",
     "build": "pnpm --filter @app/client build",
     "preview": "pnpm --filter @app/client preview",
+    "images": "node scripts/optimize-images.mjs",
     "lint": "pnpm -r lint",
     "typecheck": "pnpm -r typecheck"
+  },
+  "devDependencies": {
+    "sharp": "^0.35.5"
   }
 }

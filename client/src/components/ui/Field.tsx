@@ -20,7 +20,7 @@ interface FieldMeta {
 
 // The text is 16px so that iOS Safari does not zoom the page when a field is focused.
 const control =
-  'block w-full border-0 border-b border-line bg-transparent px-0 py-3 text-base text-ivory ' +
+  'block w-full min-w-0 rounded-none border-0 border-b border-line bg-transparent px-0 py-3 text-base text-ivory ' +
   'placeholder:text-stone transition-[border-color,box-shadow] duration-500 ease-luxe ' +
   'focus:border-gold focus:shadow-[0_1px_0_0_var(--color-gold)] focus:outline-none ' +
   'aria-invalid:border-danger aria-invalid:shadow-none disabled:opacity-40';

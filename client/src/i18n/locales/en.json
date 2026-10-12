@@ -31,15 +31,6 @@
     "privacy": "Privacy Policy",
     "cancellation": "Cancellation Policy"
   },
-  "services": {
-    "airport-transfers": "Airport Transfers",
-    "hourly-chauffeur": "Hourly Chauffeur",
-    "corporate-events": "Corporate & Events",
-    "weddings": "Weddings",
-    "city-tours": "City Tours",
-    "intercity": "Intercity Travel",
-    "hotel-partners": "Hotel Partners"
-  },
   "footer": {
     "tagline": "Private chauffeur and limousine service across Dubai and the Emirates, at any hour.",
     "services": "Services",
@@ -53,19 +44,155 @@
   "whatsapp": {
     "prefill": "Hello, I would like to book a chauffeur."
   },
+  "validation": {
+    "pickupRequired": "Enter a pickup location.",
+    "dropoffRequired": "Enter a drop-off location.",
+    "dateRequired": "Choose a date.",
+    "datePast": "Choose today or a later date.",
+    "timeRequired": "Choose a time.",
+    "tooLong": "This is too long."
+  },
+  "widget": {
+    "title": "Request a quote",
+    "pickup": "Pickup",
+    "dropoff": "Drop-off",
+    "date": "Date",
+    "time": "Time",
+    "vehicle": "Vehicle class",
+    "anyVehicle": "Any class",
+    "placePlaceholder": "Airport, hotel or address",
+    "submit": "Get quote"
+  },
   "home": {
     "seoTitle": "Luxury Chauffeur & Limousine Service in Dubai",
     "seoDescription": "Private chauffeur and limousine service in Dubai: airport transfers, hourly hire, corporate travel and weddings, with fixed prices and professional chauffeurs.",
     "hero": {
       "eyebrow": "Private chauffeur · Dubai",
       "title": "Arrive Beyond Expectation",
-      "lead": "A discreet, impeccably presented chauffeur service for airport transfers, business travel and the occasions that matter, available day and night across the Emirates."
+      "lead": "A discreet, impeccably presented chauffeur service for airport transfers, business travel and the occasions that matter."
     },
-    "intro": {
-      "eyebrow": "The standard",
+    "trust": {
+      "label": "Why travel with us",
+      "always": { "title": "24/7 service", "body": "Day and night, every day" },
+      "chauffeurs": { "title": "Professional chauffeurs", "body": "Trained, courteous, punctual" },
+      "flights": { "title": "Flight tracking", "body": "Your arrival, followed" },
+      "pricing": { "title": "Fixed pricing", "body": "Confirmed before you travel" },
+      "licensed": { "title": "{{authority}} licensed", "body": "Licence No. {{number}}" }
+    },
+    "services": {
+      "eyebrow": "Signature services",
+      "title": "A chauffeur for every occasion.",
+      "all": "View all services"
+    },
+    "fleet": {
+      "eyebrow": "The fleet",
+      "title": "Chosen for comfort. Kept immaculate.",
+      "all": "View the fleet"
+    },
+    "experience": {
+      "eyebrow": "The experience",
       "title": "Every journey, quietly perfected.",
-      "body": "From the moment you are met to the moment you arrive, each detail is considered: a chauffeur who knows the city, a car prepared for you, and a price agreed before you travel."
+      "body": "From the moment you are met to the moment you arrive, each detail is considered: a chauffeur who knows the city, a car prepared for you, and a price agreed before you travel.",
+      "imageAlt": "The rear cabin of a luxury sedan, with two reclining seats in quilted leather",
+      "items": {
+        "meet": { "title": "Meet and greet", "body": "Met by name in the arrivals hall and escorted to your car." },
+        "water": { "title": "Chilled water", "body": "Complimentary bottled water on every journey." },
+        "wifi": { "title": "Wi-Fi on board", "body": "Stay connected between meetings." },
+        "seats": { "title": "Child seats", "body": "Fitted before you are collected, on request." },
+        "discreet": { "title": "Discreet chauffeurs", "body": "Professional and courteous, never intrusive." }
+      }
+    },
+    "testimonials": {
+      "eyebrow": "In their words",
+      "title": "What our guests say."
     }
+  },
+  "cta": {
+    "eyebrow": "Reservations",
+    "title": "Your car is waiting.",
+    "body": "Reserve online in minutes, or speak to us on WhatsApp at any hour."
+  },
+  "fleet": {
+    "seoTitle": "Luxury Chauffeur Fleet in Dubai",
+    "seoDescription": "Explore our Dubai chauffeur fleet: executive and first class sedans, luxury SUVs, VIP vans and stretch limousines, each with a professional chauffeur.",
+    "eyebrow": "The fleet",
+    "title": "A car for every arrival.",
+    "lead": "Five classes of vehicle, each presented immaculately and driven by a professional chauffeur. Choose the one that suits the journey.",
+    "passengers": "Passengers",
+    "luggage": "Bags",
+    "from": "From",
+    "perTransfer": "per transfer",
+    "perHour": "per hour",
+    "book": "Book this class",
+    "details": "View details",
+    "note": "Vehicles are booked by class. The exact model depends on availability on the day.",
+    "carousel": "Vehicle classes",
+    "previous": "Previous vehicles",
+    "next": "Next vehicles"
+  },
+  "services": {
+    "seoTitle": "Chauffeur & Limousine Services in Dubai",
+    "seoDescription": "Limousine service in Dubai for every occasion: airport transfers, hourly chauffeur hire, corporate travel, weddings, city tours and intercity journeys.",
+    "eyebrow": "Services",
+    "title": "Chauffeur services in Dubai and beyond.",
+    "lead": "From the arrivals hall to the wedding aisle, each service rests on the same promise: a professional chauffeur, an immaculate car and a price agreed in advance.",
+    "discover": "Discover",
+    "included": "Included with every booking",
+    "fleetEyebrow": "The fleet",
+    "fleetTitle": "Choose your car."
+  },
+  "about": {
+    "seoTitle": "About Us",
+    "seoDescription": "A Dubai chauffeur service built on punctuality, discretion and presentation, for travellers, executives, families and hotels.",
+    "eyebrow": "About us",
+    "title": "A quieter way to travel.",
+    "lead": "We are a Dubai chauffeur service built on a simple idea: the journey should be the calmest part of your day.",
+    "story": {
+      "eyebrow": "Our approach",
+      "title": "Effortless, by design.",
+      "first": "Dubai moves quickly. Our work is to make moving through it feel effortless: a car that arrives early, a chauffeur who has already planned the route, and a cabin that lets you rest, think or work.",
+      "second": "We serve travellers, executives, families and hotels to the same standard, whether the journey is ten minutes from the airport or a day across the Emirates."
+    },
+    "values": {
+      "eyebrow": "Our standards",
+      "title": "What you can expect.",
+      "punctuality": { "title": "Punctuality", "body": "We plan around traffic and flight times, so that your car is waiting for you and not the other way round." },
+      "discretion": { "title": "Discretion", "body": "What is said in the car stays in the car. Your privacy is part of the service." },
+      "presentation": { "title": "Presentation", "body": "Immaculate vehicles and chauffeurs in business attire, on every journey." },
+      "safety": { "title": "Safety", "body": "Licensed chauffeurs, well-maintained vehicles and careful driving, always." }
+    }
+  },
+  "contact": {
+    "seoTitle": "Contact",
+    "seoDescription": "Contact our Dubai reservations team by phone, WhatsApp or email, at any hour.",
+    "eyebrow": "Contact",
+    "title": "Speak to us at any hour.",
+    "lead": "For reservations, changes and questions, reach us in whichever way is easiest. WhatsApp is usually the quickest.",
+    "phone": "Telephone",
+    "whatsapp": "WhatsApp",
+    "email": "Email",
+    "office": "Office",
+    "hours": "Hours",
+    "openMap": "Open in Google Maps",
+    "mapTitle": "Map showing the location of our office"
+  },
+  "faq": {
+    "seoTitle": "Frequently Asked Questions",
+    "seoDescription": "Answers to common questions about booking a chauffeur in Dubai: airport pickups, prices, payment, child seats and the areas we cover.",
+    "eyebrow": "FAQ",
+    "title": "Questions, answered.",
+    "lead": "The essentials on booking, airports, prices and the service. If your question is not here, ask us directly.",
+    "categories": {
+      "booking": "Booking",
+      "airport": "Airport transfers",
+      "payment": "Prices and payment",
+      "service": "The service"
+    }
+  },
+  "legal": {
+    "eyebrow": "Legal",
+    "noticeLabel": "Template text",
+    "notice": "This page is a placeholder outline. It must be replaced with the operator's own policy, reviewed by a qualified lawyer, before the site goes live."
   },
   "placeholder": {
     "eyebrow": "In preparation",

@@ -1,12 +1,14 @@
+import { services } from '@app/shared/content/services';
 import type { ReactNode } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useBrand } from '@/brand/useBrand';
 import { Container, Hairline } from '@/components/ui/Layout';
 import { LocalizedLink } from '@/components/ui/LocalizedLink';
 import { useLocale } from '@/i18n/useLocale';
+import { useLocalize } from '@/i18n/useLocalize';
 import { cn } from '@/lib/cn';
 import { mailHref, telHref, whatsappHref } from '@/lib/contact';
-import { companyNav, legalNav, serviceNav, type NavItem } from '@/lib/navigation';
+import { companyNav, legalNav } from '@/lib/navigation';
 import { Wordmark } from './Wordmark';
 
 /** Display names of the social networks. Proper nouns, so not translated. */
@@ -32,14 +34,14 @@ function Column({ title, className, children }: { title: string; className?: str
   );
 }
 
-function LinkColumn({ title, items, className }: { title: string; items: NavItem[]; className?: string }) {
-  const { t } = useTranslation();
+/** A footer column of internal links. `label` is already translated. */
+function LinkColumn({ title, items, className }: { title: string; items: { to: string; label: string }[]; className?: string }) {
   return (
     <Column title={title} className={className}>
       {items.map((item) => (
         <li key={item.to}>
           <LocalizedLink to={item.to} className={linkClass}>
-            {t(item.labelKey)}
+            {item.label}
           </LocalizedLink>
         </li>
       ))}
@@ -51,7 +53,11 @@ export function Footer() {
   const { t } = useTranslation();
   const brand = useBrand();
   const locale = useLocale();
+  const l = useLocalize();
   const { contact, licence } = brand;
+
+  const serviceLinks = services.map((service) => ({ to: `/services/${service.slug}`, label: l(service.name) }));
+  const companyLinks = companyNav.map((item) => ({ to: item.to, label: t(item.labelKey) }));
 
   // Only networks with a profile URL in the brand settings are shown.
   const socials = (Object.keys(SOCIAL_LABELS) as Array<keyof typeof SOCIAL_LABELS>).filter((key) => brand.social[key]);
@@ -68,8 +74,8 @@ export function Footer() {
             </p>
           </div>
 
-          <LinkColumn title={t('footer.services')} items={serviceNav} className="lg:col-span-3" />
-          <LinkColumn title={t('footer.company')} items={companyNav} className="lg:col-span-2" />
+          <LinkColumn title={t('footer.services')} items={serviceLinks} className="lg:col-span-3" />
+          <LinkColumn title={t('footer.company')} items={companyLinks} className="lg:col-span-2" />
 
           <Column title={t('footer.contact')} className="col-span-2 lg:col-span-3">
             <li>

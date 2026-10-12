@@ -25,5 +25,5 @@
       "@brand": ["../config/brand.config.ts"]
     }
   },
-  "include": ["src", "../config"]
+  "include": ["src", "../config", "../shared/src"]
 }

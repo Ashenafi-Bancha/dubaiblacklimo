@@ -1,0 +1,13 @@
+{
+  "name": "@app/shared",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Content, types and validation shared by the website and the API",
+  "exports": {
+    "./*": "./src/*.ts"
+  },
+  "dependencies": {
+    "zod": "^4.6.6"
+  }
+}

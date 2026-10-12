@@ -1,69 +1,62 @@
-import { ArrowRight } from 'lucide-react';
+import { services } from '@app/shared/content/services';
 import { useTranslation } from 'react-i18next';
-import { useBrand } from '@/brand/useBrand';
+import { FleetCarousel } from '@/components/fleet/FleetCarousel';
+import { CtaBand } from '@/components/sections/CtaBand';
+import { Experience } from '@/components/sections/Experience';
+import { HomeHero } from '@/components/sections/HomeHero';
+import { SectionHeading } from '@/components/sections/SectionHeading';
+import { ServiceCard } from '@/components/sections/ServiceCard';
+import { Testimonials } from '@/components/sections/Testimonials';
+import { TrustBar } from '@/components/sections/TrustBar';
 import { Seo } from '@/components/Seo';
-import { ButtonAnchor, ButtonLink } from '@/components/ui/Button';
 import { Container, Section } from '@/components/ui/Layout';
 import { Reveal } from '@/components/ui/Reveal';
-import { Eyebrow, Heading, Lead } from '@/components/ui/Typography';
-import { WhatsAppIcon } from '@/components/ui/WhatsAppIcon';
-import { whatsappHref } from '@/lib/contact';
+import { TextLink } from '@/components/ui/TextLink';
+
+/** The home page shows the first six services; all of them are on the Services page. */
+const FEATURED_SERVICES = 6;
 
 export default function Home() {
   const { t } = useTranslation();
-  const brand = useBrand();
 
   return (
     <>
       <Seo title={t('home.seoTitle')} description={t('home.seoDescription')} />
 
-      <section className="flex min-h-svh items-end bg-[radial-gradient(ellipse_90%_70%_at_75%_0%,var(--color-charcoal),var(--color-ink))]">
-        <Container className="pt-40 pb-24 lg:pb-32">
-          <Reveal>
-            <Eyebrow>{t('home.hero.eyebrow')}</Eyebrow>
-          </Reveal>
-          <Reveal delay={0.12}>
-            <Heading as="h1" size="hero" className="mt-8 max-w-[14ch]">
-              {t('home.hero.title')}
-            </Heading>
-          </Reveal>
-          <Reveal delay={0.24}>
-            <Lead className="mt-8 max-w-xl">{t('home.hero.lead')}</Lead>
-          </Reveal>
-          <Reveal delay={0.36} className="mt-12 flex flex-col gap-4 sm:flex-row">
-            <ButtonLink to="/book" size="lg">
-              {t('common.reserve')}
-              <ArrowRight aria-hidden="true" strokeWidth={1.5} className="size-4 rtl:-scale-x-100" />
-            </ButtonLink>
-            <ButtonAnchor
-              href={whatsappHref(brand.contact.whatsapp, t('whatsapp.prefill'))}
-              target="_blank"
-              rel="noopener noreferrer"
-              variant="outline"
-              size="lg"
-            >
-              <WhatsAppIcon className="size-4" />
-              {t('common.chatOnWhatsapp')}
-            </ButtonAnchor>
-          </Reveal>
+      <HomeHero />
+      <TrustBar />
+
+      <Section>
+        <Container>
+          <SectionHeading
+            eyebrow={t('home.services.eyebrow')}
+            title={t('home.services.title')}
+            action={<TextLink to="/services">{t('home.services.all')}</TextLink>}
+          />
+          <ul className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {services.slice(0, FEATURED_SERVICES).map((service, index) => (
+              <li key={service.slug}>
+                <Reveal delay={(index % 3) * 0.1}>
+                  <ServiceCard service={service} />
+                </Reveal>
+              </li>
+            ))}
+          </ul>
+        </Container>
+      </Section>
+
+      <section className="bg-ink pb-24 md:pb-32 lg:pb-40">
+        <FleetCarousel
+          heading={<SectionHeading eyebrow={t('home.fleet.eyebrow')} title={t('home.fleet.title')} />}
+        />
+        <Container className="mt-10">
+          <TextLink to="/fleet">{t('home.fleet.all')}</TextLink>
         </Container>
       </section>
 
-      <Section tone="charcoal">
-        <Container className="grid gap-10 lg:grid-cols-12">
-          <Reveal className="lg:col-span-4">
-            <Eyebrow>{t('home.intro.eyebrow')}</Eyebrow>
-          </Reveal>
-          <div className="lg:col-span-8">
-            <Reveal>
-              <Heading>{t('home.intro.title')}</Heading>
-            </Reveal>
-            <Reveal delay={0.12}>
-              <Lead className="mt-8 max-w-2xl">{t('home.intro.body')}</Lead>
-            </Reveal>
-          </div>
-        </Container>
-      </Section>
+      <Experience />
+      <Testimonials />
+      <CtaBand />
     </>
   );
 }

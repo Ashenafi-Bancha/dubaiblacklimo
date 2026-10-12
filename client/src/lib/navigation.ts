@@ -2,24 +2,14 @@
  * Site navigation. Paths are written without a language prefix; LocalizedLink
  * adds "/ar" when the visitor is browsing in Arabic. `labelKey` is a
  * translation key in src/i18n/locales.
+ *
+ * The list of services in the footer is not here: it is built from the service
+ * content itself, so adding a service adds its link.
  */
 export interface NavItem {
   to: string;
   labelKey: string;
 }
-
-/** URL slugs of the service pages, in display order. */
-export const SERVICE_SLUGS = [
-  'airport-transfers',
-  'hourly-chauffeur',
-  'corporate-events',
-  'weddings',
-  'city-tours',
-  'intercity',
-  'hotel-partners',
-] as const;
-
-export type ServiceSlug = (typeof SERVICE_SLUGS)[number];
 
 export const primaryNav: NavItem[] = [
   { to: '/fleet', labelKey: 'nav.fleet' },
@@ -28,11 +18,6 @@ export const primaryNav: NavItem[] = [
   { to: '/about', labelKey: 'nav.about' },
   { to: '/contact', labelKey: 'nav.contact' },
 ];
-
-export const serviceNav: NavItem[] = SERVICE_SLUGS.map((slug) => ({
-  to: `/services/${slug}`,
-  labelKey: `services.${slug}`,
-}));
 
 export const companyNav: NavItem[] = [
   { to: '/fleet', labelKey: 'nav.fleet' },

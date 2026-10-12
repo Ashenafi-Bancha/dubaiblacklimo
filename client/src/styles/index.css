@@ -47,7 +47,12 @@
 
   --ease-luxe: cubic-bezier(0.22, 1, 0.36, 1);
 
+  /* The loader's sweeping line. */
   --animate-sweep: sweep 1.8s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+  /* Entrance for content at the top of a page: fade in and rise. Stagger with [animation-delay:…]. */
+  --animate-rise: rise 1.1s cubic-bezier(0.22, 1, 0.36, 1) both;
+  /* The slow push-in on hero photographs. */
+  --animate-slow-zoom: slow-zoom 30s ease-out both;
 
   @keyframes sweep {
     from {
@@ -56,6 +61,35 @@
     to {
       transform: translateX(100%);
     }
+  }
+
+  @keyframes rise {
+    from {
+      opacity: 0;
+      transform: translateY(1.75rem);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+
+  @keyframes slow-zoom {
+    from {
+      transform: scale(1);
+    }
+    to {
+      transform: scale(1.1);
+    }
+  }
+}
+
+/* Hides the scrollbar of a horizontally scrolling strip, which stays scrollable. */
+@utility no-scrollbar {
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
   }
 }
 
@@ -121,6 +155,7 @@
     *::before,
     *::after {
       animation-duration: 0.01ms !important;
+      animation-delay: 0s !important;
       animation-iteration-count: 1 !important;
       transition-duration: 0.01ms !important;
     }

@@ -1,5 +1,5 @@
 import { AnimatePresence, m } from 'framer-motion';
-import { Suspense, useLayoutEffect } from 'react';
+import { Suspense, useEffect, useLayoutEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useLocation, useOutlet } from 'react-router';
 import { PageLoader } from '@/components/ui/PageLoader';
@@ -10,6 +10,21 @@ import { EASE_LUXE } from '@/lib/motion';
 import { Footer } from './Footer';
 import { Header } from './Header';
 import { WhatsAppButton } from './WhatsAppButton';
+
+/**
+ * Scrolls to the element named in the URL's #fragment once the page it lives on
+ * has rendered, so links such as /fleet#luxury-suv land on the right section.
+ */
+function ScrollToFragment() {
+  const { hash } = useLocation();
+
+  useEffect(() => {
+    if (!hash) return;
+    document.getElementById(decodeURIComponent(hash.slice(1)))?.scrollIntoView({ behavior: 'instant', block: 'start' });
+  }, [hash]);
+
+  return null;
+}
 
 /**
  * The frame around every page: header, footer, floating WhatsApp button, and
@@ -56,7 +71,10 @@ export function RootLayout() {
           exit={{ opacity: 0 }}
           transition={{ duration: 0.45, ease: EASE_LUXE }}
         >
-          <Suspense fallback={<PageLoader />}>{outlet}</Suspense>
+          <Suspense fallback={<PageLoader />}>
+            {outlet}
+            <ScrollToFragment />
+          </Suspense>
         </m.main>
       </AnimatePresence>
 

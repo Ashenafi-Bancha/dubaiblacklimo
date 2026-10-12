@@ -9,10 +9,9 @@
  * Values marked PLACEHOLDER must be replaced by the operator before launch.
  */
 
-export type LocaleCode = 'en' | 'ar';
+import type { LocaleCode, Localized } from '../shared/src/locale.ts';
 
-/** A piece of text provided in every supported language. */
-export type Localized = Record<LocaleCode, string>;
+export type { LocaleCode, Localized };
 
 export interface BrandConfig {
   /** Trading name shown in the header, footer, page titles and emails. */
@@ -32,6 +31,10 @@ export interface BrandConfig {
     whatsapp: string;
     email: string;
     address: Localized;
+    /** When reservations are answered. */
+    hours: Localized;
+    /** Office position, used for the map on the contact page. */
+    location: { lat: number; lng: number };
   };
   licence: {
     authority: Localized;
@@ -70,6 +73,11 @@ export const brandConfig: BrandConfig = {
       en: 'Office address, Dubai, United Arab Emirates', // PLACEHOLDER
       ar: 'عنوان المكتب، دبي، الإمارات العربية المتحدة', // PLACEHOLDER
     },
+    hours: {
+      en: 'Reservations answered 24 hours a day, every day', // PLACEHOLDER
+      ar: 'نستقبل الحجوزات على مدار الساعة طوال أيام الأسبوع', // PLACEHOLDER
+    },
+    location: { lat: 25.1972, lng: 55.2744 }, // PLACEHOLDER: Downtown Dubai
   },
   licence: {
     authority: { en: 'RTA', ar: 'هيئة الطرق والمواصلات' },

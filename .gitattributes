@@ -1,0 +1,9 @@
+# Keep line endings identical on Windows, macOS and Linux.
+* text=auto eol=lf
+
+*.jpg binary
+*.jpeg binary
+*.png binary
+*.webp binary
+*.avif binary
+*.woff2 binary

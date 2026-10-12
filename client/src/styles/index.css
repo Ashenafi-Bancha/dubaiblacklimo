@@ -1,0 +1,128 @@
+@import 'tailwindcss';
+
+/*
+ * DESIGN TOKENS
+ *
+ * Every colour, font and size used by the site is defined here and exposed as a
+ * Tailwind utility (bg-ink, text-gold, font-display, text-hero, ...).
+ *
+ * The four core colours below are defaults only. The real values come from
+ * config/brand.config.ts (written into index.html by vite.config.ts), and every
+ * other shade is mixed from those four, so a rebrand needs no CSS changes.
+ */
+@theme {
+  /* Remove Tailwind's default palette: only the brand palette may be used. */
+  --color-*: initial;
+
+  --color-ink: #0a0a0a; /* page background */
+  --color-charcoal: #141414; /* alternate section background, cards */
+  --color-gold: #c9a961; /* accent, used sparingly */
+  --color-ivory: #f5f1e8; /* primary text */
+
+  --color-graphite: color-mix(in srgb, var(--color-charcoal) 94%, var(--color-ivory)); /* raised surfaces */
+  --color-gold-soft: color-mix(in srgb, var(--color-gold) 78%, var(--color-ivory)); /* accent hover */
+  --color-mist: color-mix(in srgb, var(--color-ivory) 70%, var(--color-ink)); /* secondary text */
+  --color-stone: color-mix(in srgb, var(--color-ivory) 52%, var(--color-ink)); /* tertiary text, AA on ink */
+  --color-line: color-mix(in srgb, var(--color-ivory) 12%, transparent); /* hairline dividers */
+  --color-danger: #d4927f; /* form errors */
+
+  /* The Arabic face sits in both stacks, so Arabic text picks it up automatically. */
+  --font-display: 'Cormorant Garamond', 'IBM Plex Sans Arabic', 'Times New Roman', serif;
+  --font-sans: 'Manrope Variable', 'IBM Plex Sans Arabic', ui-sans-serif, system-ui, sans-serif;
+
+  /* Fluid type scale: sizes grow smoothly from a 375px phone to a 1920px display. */
+  --text-hero: clamp(2.75rem, 1.55rem + 5.4vw, 6.75rem);
+  --text-hero--line-height: 1.02;
+  --text-hero--letter-spacing: -0.01em;
+  --text-display: clamp(2.25rem, 1.55rem + 3vw, 4.25rem);
+  --text-display--line-height: 1.08;
+  --text-display--letter-spacing: -0.005em;
+  --text-title: clamp(1.625rem, 1.35rem + 1.2vw, 2.375rem);
+  --text-title--line-height: 1.18;
+  --text-lead: clamp(1.0625rem, 1rem + 0.3vw, 1.25rem);
+  --text-lead--line-height: 1.7;
+  --text-label: 0.75rem;
+  --text-label--line-height: 1.4;
+  --text-label--letter-spacing: 0.24em;
+
+  --ease-luxe: cubic-bezier(0.22, 1, 0.36, 1);
+
+  --animate-sweep: sweep 1.8s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+
+  @keyframes sweep {
+    from {
+      transform: translateX(-100%);
+    }
+    to {
+      transform: translateX(100%);
+    }
+  }
+}
+
+@layer base {
+  html {
+    background-color: var(--color-ink);
+    color: var(--color-ivory);
+    color-scheme: dark;
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    min-height: 100svh;
+    font-size: 1rem;
+    line-height: 1.7;
+    overflow-x: clip;
+  }
+
+  ::selection {
+    background-color: var(--color-gold);
+    color: var(--color-ink);
+  }
+
+  :focus-visible {
+    outline: 1px solid var(--color-gold);
+    outline-offset: 4px;
+  }
+
+  /*
+   * ARABIC TYPOGRAPHY
+   * Arabic script is cursive, so letter-spacing would break the joins between
+   * letters: it is switched off everywhere. The Arabic face is also visually
+   * larger than the Latin serif and needs more line height, so the display
+   * sizes are stepped down.
+   */
+  html[lang='ar'] {
+    --text-hero: clamp(2.375rem, 1.5rem + 3.9vw, 5.25rem);
+    --text-hero--line-height: 1.3;
+    --text-display: clamp(2rem, 1.45rem + 2.3vw, 3.5rem);
+    --text-display--line-height: 1.35;
+    --text-title: clamp(1.5rem, 1.3rem + 0.9vw, 2.125rem);
+    --text-title--line-height: 1.45;
+    --text-lead--line-height: 1.9;
+    --text-label: 0.875rem;
+    --text-label--line-height: 1.6;
+  }
+
+  html[lang='ar'] * {
+    letter-spacing: 0 !important;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}

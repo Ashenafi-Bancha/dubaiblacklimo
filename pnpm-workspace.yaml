@@ -1,0 +1,6 @@
+packages:
+  - client
+
+# pnpm blocks dependency install scripts by default; esbuild needs its own.
+onlyBuiltDependencies:
+  - esbuild

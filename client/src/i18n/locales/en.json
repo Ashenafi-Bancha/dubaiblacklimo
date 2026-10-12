@@ -1,0 +1,79 @@
+{
+  "common": {
+    "skipToContent": "Skip to content",
+    "bookNow": "Book now",
+    "reserve": "Reserve your chauffeur",
+    "getQuote": "Get a quote",
+    "call": "Call",
+    "callNumber": "Call {{phone}}",
+    "whatsapp": "WhatsApp",
+    "chatOnWhatsapp": "Chat on WhatsApp",
+    "email": "Email",
+    "loading": "Loading",
+    "homeLink": "{{brand}}, home page",
+    "backHome": "Return home",
+    "switchLanguage": "Switch language to {{language}}"
+  },
+  "nav": {
+    "primary": "Main navigation",
+    "menu": "Menu",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "fleet": "Fleet",
+    "services": "Services",
+    "corporate": "Corporate",
+    "about": "About",
+    "contact": "Contact",
+    "faq": "FAQ",
+    "book": "Book",
+    "account": "My bookings",
+    "terms": "Terms & Conditions",
+    "privacy": "Privacy Policy",
+    "cancellation": "Cancellation Policy"
+  },
+  "services": {
+    "airport-transfers": "Airport Transfers",
+    "hourly-chauffeur": "Hourly Chauffeur",
+    "corporate-events": "Corporate & Events",
+    "weddings": "Weddings",
+    "city-tours": "City Tours",
+    "intercity": "Intercity Travel",
+    "hotel-partners": "Hotel Partners"
+  },
+  "footer": {
+    "tagline": "Private chauffeur and limousine service across Dubai and the Emirates, at any hour.",
+    "services": "Services",
+    "company": "Company",
+    "contact": "Contact",
+    "legal": "Legal",
+    "follow": "Follow",
+    "licence": "{{authority}} licensed · Licence No. {{number}}",
+    "rights": "© {{year}} {{name}}. All rights reserved."
+  },
+  "whatsapp": {
+    "prefill": "Hello, I would like to book a chauffeur."
+  },
+  "home": {
+    "seoTitle": "Luxury Chauffeur & Limousine Service in Dubai",
+    "seoDescription": "Private chauffeur and limousine service in Dubai: airport transfers, hourly hire, corporate travel and weddings, with fixed prices and professional chauffeurs.",
+    "hero": {
+      "eyebrow": "Private chauffeur · Dubai",
+      "title": "Arrive Beyond Expectation",
+      "lead": "A discreet, impeccably presented chauffeur service for airport transfers, business travel and the occasions that matter, available day and night across the Emirates."
+    },
+    "intro": {
+      "eyebrow": "The standard",
+      "title": "Every journey, quietly perfected.",
+      "body": "From the moment you are met to the moment you arrive, each detail is considered: a chauffeur who knows the city, a car prepared for you, and a price agreed before you travel."
+    }
+  },
+  "placeholder": {
+    "eyebrow": "In preparation",
+    "body": "This page is being prepared and will be available shortly."
+  },
+  "notFound": {
+    "eyebrow": "Error 404",
+    "title": "This page could not be found",
+    "body": "The address may have changed, or the page may no longer exist."
+  }
+}

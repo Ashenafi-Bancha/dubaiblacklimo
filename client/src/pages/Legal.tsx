@@ -21,7 +21,7 @@ export default function Legal({ slug }: { slug: LegalSlug }) {
   return (
     <>
       <Seo title={l(document.title)} />
-      <PageHeader eyebrow={t('legal.eyebrow')} title={l(document.title)} />
+      <PageHeader image="pages/legal" eyebrow={t('legal.eyebrow')} title={l(document.title)} />
 
       <Section>
         <Container>

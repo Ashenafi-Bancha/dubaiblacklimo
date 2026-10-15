@@ -4,7 +4,9 @@ import { useBrand } from '@/brand/useBrand';
 import { ButtonAnchor, ButtonLink } from '@/components/ui/Button';
 import { Container } from '@/components/ui/Layout';
 import { Picture } from '@/components/ui/Picture';
+import { MaskReveal } from '@/components/ui/Motion';
 import { Reveal } from '@/components/ui/Reveal';
+import { Rich } from '@/components/ui/Rich';
 import { Eyebrow, Heading, Lead } from '@/components/ui/Typography';
 import { WhatsAppIcon } from '@/components/ui/WhatsAppIcon';
 import { telHref, whatsappHref } from '@/lib/contact';
@@ -21,16 +23,19 @@ export function CtaBand() {
     <section className="relative isolate overflow-hidden border-t border-line">
       <div className="absolute inset-0 -z-10">
         <Picture src="home/cta" alt="" sizes="(max-width: 640px) 250vw, 100vw" className="size-full object-cover" />
-        <div className="absolute inset-0 bg-ink/75" />
+        <div className="absolute inset-0 bg-ink/70" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_30%,var(--color-ink))]" />
       </div>
 
-      <Container className="flex flex-col items-center py-28 text-center md:py-40">
+      <Container className="flex flex-col items-center py-32 text-center md:py-48">
         <Reveal>
           <Eyebrow>{t('cta.eyebrow')}</Eyebrow>
         </Reveal>
-        <Reveal delay={0.1}>
-          <Heading className="mt-8">{t('cta.title')}</Heading>
-        </Reveal>
+        <Heading className="mt-8">
+          <MaskReveal delay={0.1}>
+            <Rich k="cta.title" />
+          </MaskReveal>
+        </Heading>
         <Reveal delay={0.2}>
           <Lead className="mt-6 max-w-xl">{t('cta.body')}</Lead>
         </Reveal>

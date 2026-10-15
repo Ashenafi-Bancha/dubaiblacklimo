@@ -12,14 +12,18 @@ interface StyleProps {
 }
 
 const base =
-  'inline-flex items-center justify-center gap-3 whitespace-nowrap text-label font-semibold uppercase ' +
-  'transition-colors duration-500 ease-luxe select-none disabled:pointer-events-none disabled:opacity-40';
+  'relative isolate inline-flex items-center justify-center gap-3 overflow-hidden whitespace-nowrap text-label font-semibold uppercase ' +
+  'transition-colors duration-700 ease-luxe select-none disabled:pointer-events-none disabled:opacity-40';
 
 const variants: Record<Variant, string> = {
-  /** The one gold-filled action per screen. */
-  primary: 'bg-gold text-ink hover:bg-gold-soft',
-  /** Secondary action: gold hairline that fills on hover. */
-  outline: 'border border-gold/60 text-ivory hover:border-gold hover:bg-gold hover:text-ink',
+  /** The one gold-filled action per screen. A soft band of light passes across it on hover. */
+  primary:
+    'bg-gold text-ink before:absolute before:inset-y-0 before:-start-1/2 before:-z-10 before:w-1/3 before:-skew-x-12 ' +
+    'before:bg-ivory/35 before:blur-md before:transition-[inset-inline-start] before:duration-1000 before:ease-luxe hover:before:start-[130%]',
+  /** Secondary action: a gold hairline whose fill sweeps in from the reading direction's start on hover. */
+  outline:
+    'border border-gold/60 text-ivory hover:border-gold hover:text-ink after:absolute after:inset-0 after:-z-10 after:origin-left ' +
+    'after:scale-x-0 after:bg-gold after:transition-transform after:duration-700 after:ease-luxe hover:after:scale-x-100 rtl:after:origin-right',
   /** Quiet text action. */
   ghost: 'text-ivory hover:text-gold',
 };

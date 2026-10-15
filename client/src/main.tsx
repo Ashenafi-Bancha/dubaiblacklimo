@@ -3,11 +3,14 @@
 import '@fontsource/cormorant-garamond/300.css';
 import '@fontsource/cormorant-garamond/400.css';
 import '@fontsource/cormorant-garamond/500.css';
+import '@fontsource/cormorant-garamond/300-italic.css';
+import '@fontsource/cormorant-garamond/400-italic.css';
 import '@fontsource-variable/manrope/index.css';
 import '@fontsource/ibm-plex-sans-arabic/300.css';
 import '@fontsource/ibm-plex-sans-arabic/400.css';
 import '@fontsource/ibm-plex-sans-arabic/500.css';
 import '@fontsource/ibm-plex-sans-arabic/600.css';
+import 'lenis/dist/lenis.css';
 import './styles/index.css';
 import './i18n';
 

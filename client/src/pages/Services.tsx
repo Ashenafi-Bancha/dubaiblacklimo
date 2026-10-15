@@ -7,6 +7,7 @@ import { Seo } from '@/components/Seo';
 import { Container, Section } from '@/components/ui/Layout';
 import { LocalizedLink } from '@/components/ui/LocalizedLink';
 import { Picture } from '@/components/ui/Picture';
+import { Rich } from '@/components/ui/Rich';
 import { Reveal } from '@/components/ui/Reveal';
 import { useLocalize } from '@/i18n/useLocalize';
 
@@ -17,7 +18,12 @@ export default function Services() {
   return (
     <>
       <Seo title={t('services.seoTitle')} description={t('services.seoDescription')} />
-      <PageHeader eyebrow={t('services.eyebrow')} title={t('services.title')} lead={t('services.lead')} />
+      <PageHeader
+        image="pages/services"
+        eyebrow={t('services.eyebrow')}
+        title={<Rich k="services.title" />}
+        lead={t('services.lead')}
+      />
 
       <Section>
         <Container>

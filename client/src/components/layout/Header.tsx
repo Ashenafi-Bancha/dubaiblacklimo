@@ -1,3 +1,4 @@
+import { m, useScroll, useSpring } from 'framer-motion';
 import { Menu, Phone } from 'lucide-react';
 import { useCallback, useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
@@ -31,6 +32,9 @@ export function Header() {
   const scrolled = useScrolled();
   const [menuOpen, setMenuOpen] = useState(false);
   const closeMenu = useCallback(() => setMenuOpen(false), []);
+  // A gold hairline along the foot of the header fills as the page is read.
+  const { scrollYProgress } = useScroll();
+  const progress = useSpring(scrollYProgress, { stiffness: 120, damping: 30, mass: 0.4 });
 
   // If a phone is rotated or a window widened past the breakpoint, close the mobile menu.
   useEffect(() => {
@@ -108,6 +112,14 @@ export function Header() {
             </button>
           </div>
         </Container>
+        <m.div
+          aria-hidden="true"
+          className={cn(
+            'absolute inset-x-0 bottom-0 h-px origin-left bg-gold/70 transition-opacity duration-700 rtl:origin-right',
+            scrolled ? 'opacity-100' : 'opacity-0',
+          )}
+          style={{ scaleX: progress }}
+        />
       </header>
 
       <MobileMenu open={menuOpen} onClose={closeMenu} />

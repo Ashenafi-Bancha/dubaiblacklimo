@@ -1,27 +1,37 @@
 import type { ReactNode } from 'react';
+import { MaskReveal } from '@/components/ui/Motion';
 import { Reveal } from '@/components/ui/Reveal';
 import { Eyebrow, Heading } from '@/components/ui/Typography';
+import { cn } from '@/lib/cn';
 
 interface SectionHeadingProps {
   eyebrow: string;
-  title: string;
+  /** Pass <Rich k="…" /> to show accent words in champagne italics. */
+  title: ReactNode;
   /** Something to sit opposite the heading, such as a "view all" link. */
   action?: ReactNode;
+  /** Centre the heading, for sections without an action. */
+  centered?: boolean;
 }
 
-/** The label-and-heading pair that opens a section, revealed on scroll. */
-export function SectionHeading({ eyebrow, title, action }: SectionHeadingProps) {
+/** The label-and-heading pair that opens a section. The heading rises into view from behind an edge. */
+export function SectionHeading({ eyebrow, title, action, centered = false }: SectionHeadingProps) {
   return (
-    <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between md:gap-10">
+    <div
+      className={cn(
+        'flex flex-col gap-6 md:gap-10',
+        centered ? 'items-center text-center' : 'md:flex-row md:items-end md:justify-between',
+      )}
+    >
       <div>
         <Reveal>
-          <Eyebrow>{eyebrow}</Eyebrow>
+          <Eyebrow className={centered ? 'justify-center' : undefined}>{eyebrow}</Eyebrow>
         </Reveal>
-        <Reveal delay={0.1}>
-          <Heading className="mt-8 max-w-3xl">{title}</Heading>
-        </Reveal>
+        <Heading className="mt-8 max-w-4xl">
+          <MaskReveal delay={0.1}>{title}</MaskReveal>
+        </Heading>
       </div>
-      {action && <Reveal delay={0.2}>{action}</Reveal>}
+      {action && <Reveal delay={0.25}>{action}</Reveal>}
     </div>
   );
 }

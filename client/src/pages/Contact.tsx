@@ -6,6 +6,7 @@ import { PageHeader } from '@/components/sections/PageHeader';
 import { Seo } from '@/components/Seo';
 import { Container, Section } from '@/components/ui/Layout';
 import { Reveal } from '@/components/ui/Reveal';
+import { Rich } from '@/components/ui/Rich';
 import { WhatsAppIcon } from '@/components/ui/WhatsAppIcon';
 import { useLocale } from '@/i18n/useLocale';
 import { mailHref, telHref, whatsappHref } from '@/lib/contact';
@@ -41,7 +42,7 @@ export default function Contact() {
   return (
     <>
       <Seo title={t('contact.seoTitle')} description={t('contact.seoDescription')} />
-      <PageHeader eyebrow={t('contact.eyebrow')} title={t('contact.title')} lead={t('contact.lead')} />
+      <PageHeader image="pages/contact" eyebrow={t('contact.eyebrow')} title={<Rich k="contact.title" />} lead={t('contact.lead')} />
 
       <Section>
         <Container className="grid gap-16 lg:grid-cols-12 lg:gap-10">

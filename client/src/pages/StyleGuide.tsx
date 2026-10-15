@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/Button';
 import { SelectField, TextAreaField, TextField } from '@/components/ui/Field';
 import { Container, Hairline } from '@/components/ui/Layout';
 import { PageLoader } from '@/components/ui/PageLoader';
+import { Rich } from '@/components/ui/Rich';
 import { Eyebrow, Heading, Lead } from '@/components/ui/Typography';
 
 /**
@@ -63,17 +64,17 @@ export default function StyleGuide() {
         <Block title="Typography">
           <div className="space-y-10">
             <Heading as="h3" size="hero">
-              {t('home.hero.title')}
+              <Rich k="home.hero.title" />
             </Heading>
             <Heading as="h3" size="display">
-              {t('home.intro.title')}
+              <Rich k="home.experience.title" />
             </Heading>
             <Heading as="h3" size="title">
               {t('home.seoTitle')}
             </Heading>
             <Eyebrow>{t('home.hero.eyebrow')}</Eyebrow>
             <Lead className="max-w-2xl">{t('home.hero.lead')}</Lead>
-            <p className="max-w-2xl text-mist">{t('home.intro.body')}</p>
+            <p className="max-w-2xl text-mist">{t('home.experience.body')}</p>
           </div>
         </Block>
 

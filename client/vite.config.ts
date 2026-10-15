@@ -32,5 +32,6 @@ export default defineConfig({
       '@brand': fileURLToPath(new URL('../config/brand.config.ts', import.meta.url)),
     },
   },
-  server: { port: 5173, strictPort: true },
+  // PORT lets a development tool or another project's server choose a different port.
+  server: { port: Number(process.env.PORT) || 5173, strictPort: true },
 });

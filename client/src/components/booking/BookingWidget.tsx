@@ -1,4 +1,4 @@
-import { vehicleClasses } from '@app/shared/content/fleet';
+import { vehicleClasses, vehicleName } from '@app/shared/content/fleet';
 import { popularPlaces } from '@app/shared/content/locations';
 import { quoteRequestSchema, type QuoteRequest } from '@app/shared/schemas/quote';
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -66,7 +66,12 @@ export function BookingWidget({ className }: { className?: string }) {
       onSubmit={handleSubmit(onSubmit)}
       noValidate
       aria-label={t('widget.title')}
-      className={cn('border border-line bg-ink/75 p-6 backdrop-blur-md sm:p-8', className)}
+      className={cn(
+        'relative border border-line bg-ink/70 p-6 shadow-[0_40px_80px_-20px_rgb(0_0_0/0.7)] backdrop-blur-xl sm:p-8',
+        // A gold hairline along the top edge of the console.
+        'before:absolute before:inset-x-0 before:-top-px before:h-px before:bg-linear-to-r before:from-transparent before:via-gold/70 before:to-transparent',
+        className,
+      )}
     >
       <div className="grid gap-x-8 gap-y-7 sm:grid-cols-2 xl:grid-cols-[1.3fr_1.3fr_0.9fr_0.7fr_1fr_auto] xl:items-start">
         <TextField
@@ -93,7 +98,7 @@ export function BookingWidget({ className }: { className?: string }) {
           <option value="">{t('widget.anyVehicle')}</option>
           {vehicleClasses.map((vehicle) => (
             <option key={vehicle.slug} value={vehicle.slug}>
-              {l(vehicle.name)}
+              {vehicleName(vehicle, locale)}
             </option>
           ))}
         </SelectField>

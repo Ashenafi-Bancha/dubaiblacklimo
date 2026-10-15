@@ -11,9 +11,21 @@
     ],
     "color": "#080808"
   },
-  "fleet/executive-sedan": {
-    "width": 2000,
-    "height": 1331,
+  "destinations/bluewaters": {
+    "width": 2400,
+    "height": 1603,
+    "widths": [
+      480,
+      800,
+      1200,
+      1600,
+      2000
+    ],
+    "color": "#081818"
+  },
+  "destinations/difc": {
+    "width": 2400,
+    "height": 1602,
     "widths": [
       480,
       800,
@@ -23,9 +35,9 @@
     ],
     "color": "#080808"
   },
-  "fleet/first-class-sedan": {
-    "width": 2000,
-    "height": 1333,
+  "destinations/downtown-dubai": {
+    "width": 2400,
+    "height": 1800,
     "widths": [
       480,
       800,
@@ -33,10 +45,46 @@
       1600,
       2000
     ],
-    "color": "#080808"
+    "color": "#485878"
   },
-  "fleet/luxury-suv": {
-    "width": 2000,
+  "destinations/dubai-marina": {
+    "width": 2400,
+    "height": 1500,
+    "widths": [
+      480,
+      800,
+      1200,
+      1600,
+      2000
+    ],
+    "color": "#181828"
+  },
+  "destinations/jumeirah": {
+    "width": 2400,
+    "height": 1626,
+    "widths": [
+      480,
+      800,
+      1200,
+      1600,
+      2000
+    ],
+    "color": "#98b8d8"
+  },
+  "destinations/palm-jumeirah": {
+    "width": 2400,
+    "height": 1800,
+    "widths": [
+      480,
+      800,
+      1200,
+      1600,
+      2000
+    ],
+    "color": "#084848"
+  },
+  "fleet/bentley-flying-spur": {
+    "width": 2400,
     "height": 1600,
     "widths": [
       480,
@@ -47,9 +95,9 @@
     ],
     "color": "#080808"
   },
-  "fleet/stretch-limousine": {
-    "width": 2000,
-    "height": 1333,
+  "fleet/mercedes-maybach-gls": {
+    "width": 2400,
+    "height": 1500,
     "widths": [
       480,
       800,
@@ -57,9 +105,21 @@
       1600,
       2000
     ],
-    "color": "#787878"
+    "color": "#080808"
   },
-  "fleet/vip-van": {
+  "fleet/mercedes-maybach-s-class": {
+    "width": 2400,
+    "height": 1800,
+    "widths": [
+      480,
+      800,
+      1200,
+      1600,
+      2000
+    ],
+    "color": "#181818"
+  },
+  "fleet/mercedes-v-class": {
     "width": 2000,
     "height": 1333,
     "widths": [
@@ -70,6 +130,42 @@
       2000
     ],
     "color": "#080808"
+  },
+  "fleet/rolls-royce-cullinan": {
+    "width": 2400,
+    "height": 1800,
+    "widths": [
+      480,
+      800,
+      1200,
+      1600,
+      2000
+    ],
+    "color": "#181818"
+  },
+  "fleet/rolls-royce-ghost": {
+    "width": 2400,
+    "height": 1600,
+    "widths": [
+      480,
+      800,
+      1200,
+      1600,
+      2000
+    ],
+    "color": "#080808"
+  },
+  "fleet/rolls-royce-phantom": {
+    "width": 2400,
+    "height": 1600,
+    "widths": [
+      480,
+      800,
+      1200,
+      1600,
+      2000
+    ],
+    "color": "#081818"
   },
   "home/cta": {
     "width": 2000,
@@ -84,8 +180,8 @@
     "color": "#080808"
   },
   "home/experience": {
-    "width": 2000,
-    "height": 1334,
+    "width": 2400,
+    "height": 1600,
     "widths": [
       480,
       800,
@@ -93,11 +189,71 @@
       1600,
       2000
     ],
-    "color": "#d8d8d8"
+    "color": "#080808"
   },
   "home/hero": {
-    "width": 2000,
-    "height": 1126,
+    "width": 2400,
+    "height": 1600,
+    "widths": [
+      480,
+      800,
+      1200,
+      1600,
+      2000
+    ],
+    "color": "#183878"
+  },
+  "pages/contact": {
+    "width": 2400,
+    "height": 1350,
+    "widths": [
+      480,
+      800,
+      1200,
+      1600,
+      2000
+    ],
+    "color": "#080808"
+  },
+  "pages/faq": {
+    "width": 2400,
+    "height": 1600,
+    "widths": [
+      480,
+      800,
+      1200,
+      1600,
+      2000
+    ],
+    "color": "#080808"
+  },
+  "pages/fleet": {
+    "width": 2400,
+    "height": 1600,
+    "widths": [
+      480,
+      800,
+      1200,
+      1600,
+      2000
+    ],
+    "color": "#080808"
+  },
+  "pages/legal": {
+    "width": 2400,
+    "height": 1502,
+    "widths": [
+      480,
+      800,
+      1200,
+      1600,
+      2000
+    ],
+    "color": "#080808"
+  },
+  "pages/services": {
+    "width": 2400,
+    "height": 1796,
     "widths": [
       480,
       800,
@@ -108,8 +264,8 @@
     "color": "#080808"
   },
   "services/airport-transfers": {
-    "width": 2000,
-    "height": 1325,
+    "width": 2400,
+    "height": 1350,
     "widths": [
       480,
       800,
@@ -117,7 +273,7 @@
       1600,
       2000
     ],
-    "color": "#282828"
+    "color": "#9898a8"
   },
   "services/city-tours": {
     "width": 2000,
@@ -132,32 +288,8 @@
     "color": "#585858"
   },
   "services/corporate-events": {
-    "width": 2000,
-    "height": 943,
-    "widths": [
-      480,
-      800,
-      1200,
-      1600,
-      2000
-    ],
-    "color": "#b8b8b8"
-  },
-  "services/hotel-partners": {
-    "width": 2000,
-    "height": 1234,
-    "widths": [
-      480,
-      800,
-      1200,
-      1600,
-      2000
-    ],
-    "color": "#080808"
-  },
-  "services/hourly-chauffeur": {
-    "width": 2000,
-    "height": 1500,
+    "width": 2400,
+    "height": 1600,
     "widths": [
       480,
       800,
@@ -166,6 +298,30 @@
       2000
     ],
     "color": "#080818"
+  },
+  "services/hotel-partners": {
+    "width": 2400,
+    "height": 1594,
+    "widths": [
+      480,
+      800,
+      1200,
+      1600,
+      2000
+    ],
+    "color": "#281828"
+  },
+  "services/hourly-chauffeur": {
+    "width": 2400,
+    "height": 1600,
+    "widths": [
+      480,
+      800,
+      1200,
+      1600,
+      2000
+    ],
+    "color": "#181818"
   },
   "services/intercity": {
     "width": 2000,
@@ -180,8 +336,8 @@
     "color": "#182828"
   },
   "services/weddings": {
-    "width": 2000,
-    "height": 1336,
+    "width": 2400,
+    "height": 1600,
     "widths": [
       480,
       800,
@@ -189,6 +345,6 @@
       1600,
       2000
     ],
-    "color": "#282828"
+    "color": "#181828"
   }
 }

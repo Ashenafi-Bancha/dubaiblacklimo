@@ -132,6 +132,17 @@ export function Footer() {
           )}
         </div>
       </Container>
+
+      {/* The brand name set very large and almost invisible, as a signature at the foot of every page. */}
+      <div aria-hidden="true" className="overflow-hidden">
+        <p
+          className="-mb-[0.18em] text-center font-display leading-none font-light whitespace-nowrap text-ivory/[0.045] uppercase select-none"
+          // Sized from the name's length so that any brand name spans the page without overflowing.
+          style={{ fontSize: `${Math.min(14, 145 / brand.name[locale].length)}vw` }}
+        >
+          {brand.name[locale]}
+        </p>
+      </div>
     </footer>
   );
 }

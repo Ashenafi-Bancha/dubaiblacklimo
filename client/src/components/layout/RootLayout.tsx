@@ -7,6 +7,7 @@ import i18n from '@/i18n';
 import { applyDocumentLocale } from '@/i18n/locale';
 import { useLocale } from '@/i18n/useLocale';
 import { EASE_LUXE } from '@/lib/motion';
+import { jumpToElement, jumpToTop, startSmoothScroll, stopSmoothScroll } from '@/lib/smoothScroll';
 import { Footer } from './Footer';
 import { Header } from './Header';
 import { WhatsAppButton } from './WhatsAppButton';
@@ -20,7 +21,8 @@ function ScrollToFragment() {
 
   useEffect(() => {
     if (!hash) return;
-    document.getElementById(decodeURIComponent(hash.slice(1)))?.scrollIntoView({ behavior: 'instant', block: 'start' });
+    const target = document.getElementById(decodeURIComponent(hash.slice(1)));
+    if (target) jumpToElement(target);
   }, [hash]);
 
   return null;
@@ -38,6 +40,11 @@ export function RootLayout() {
   // can stay on screen while it fades out.
   const outlet = useOutlet();
   const locale = useLocale();
+
+  useEffect(() => {
+    startSmoothScroll();
+    return stopSmoothScroll;
+  }, []);
 
   useLayoutEffect(() => {
     applyDocumentLocale(locale);
@@ -59,7 +66,7 @@ export function RootLayout() {
         mode="wait"
         initial={false}
         // Jump to the top between pages, while nothing is on screen.
-        onExitComplete={() => window.scrollTo({ top: 0, behavior: 'instant' })}
+        onExitComplete={jumpToTop}
       >
         <m.main
           id="main"
@@ -80,6 +87,7 @@ export function RootLayout() {
 
       <Footer />
       <WhatsAppButton />
+      <div aria-hidden="true" className="film-grain" />
     </>
   );
 }

@@ -1,8 +1,7 @@
 import { useTranslation } from 'react-i18next';
+import { PageHeader } from '@/components/sections/PageHeader';
 import { Seo } from '@/components/Seo';
 import { ButtonLink } from '@/components/ui/Button';
-import { Container } from '@/components/ui/Layout';
-import { Eyebrow, Heading, Lead } from '@/components/ui/Typography';
 
 export default function NotFound() {
   const { t } = useTranslation();
@@ -10,18 +9,11 @@ export default function NotFound() {
   return (
     <>
       <Seo title={t('notFound.title')} noindex />
-      <Container className="flex min-h-svh flex-col justify-center py-40">
-        <Eyebrow>{t('notFound.eyebrow')}</Eyebrow>
-        <Heading as="h1" className="mt-8">
-          {t('notFound.title')}
-        </Heading>
-        <Lead className="mt-6 max-w-xl">{t('notFound.body')}</Lead>
-        <div className="mt-12">
-          <ButtonLink to="/" variant="outline">
-            {t('common.backHome')}
-          </ButtonLink>
-        </div>
-      </Container>
+      <PageHeader image="pages/legal" eyebrow={t('notFound.eyebrow')} title={t('notFound.title')} lead={t('notFound.body')}>
+        <ButtonLink to="/" variant="outline">
+          {t('common.backHome')}
+        </ButtonLink>
+      </PageHeader>
     </>
   );
 }

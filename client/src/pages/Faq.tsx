@@ -6,6 +6,7 @@ import { Seo } from '@/components/Seo';
 import { AccordionItem } from '@/components/ui/Accordion';
 import { Container, Section } from '@/components/ui/Layout';
 import { Reveal } from '@/components/ui/Reveal';
+import { Rich } from '@/components/ui/Rich';
 import { useLocalize } from '@/i18n/useLocalize';
 
 export default function Faq() {
@@ -15,7 +16,7 @@ export default function Faq() {
   return (
     <>
       <Seo title={t('faq.seoTitle')} description={t('faq.seoDescription')} />
-      <PageHeader eyebrow={t('faq.eyebrow')} title={t('faq.title')} lead={t('faq.lead')} />
+      <PageHeader image="pages/faq" eyebrow={t('faq.eyebrow')} title={<Rich k="faq.title" />} lead={t('faq.lead')} />
 
       <Section>
         <Container className="space-y-20 lg:space-y-28">

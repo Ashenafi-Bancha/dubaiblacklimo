@@ -1,4 +1,5 @@
 import { useEffect, type RefObject } from 'react';
+import { lockScroll, unlockScroll } from '@/lib/smoothScroll';
 
 const FOCUSABLE = 'a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled])';
 
@@ -16,7 +17,7 @@ export function useModalBehaviour(ref: RefObject<HTMLElement | null>, open: bool
     const focusable = () => Array.from(container?.querySelectorAll<HTMLElement>(FOCUSABLE) ?? []);
 
     focusable()[0]?.focus();
-    document.documentElement.style.overflow = 'hidden';
+    lockScroll();
 
     const onKeyDown = (event: KeyboardEvent) => {
       if (event.key === 'Escape') {
@@ -43,7 +44,7 @@ export function useModalBehaviour(ref: RefObject<HTMLElement | null>, open: bool
     document.addEventListener('keydown', onKeyDown);
     return () => {
       document.removeEventListener('keydown', onKeyDown);
-      document.documentElement.style.overflow = '';
+      unlockScroll();
       previouslyFocused?.focus();
     };
   }, [ref, open, onClose]);
